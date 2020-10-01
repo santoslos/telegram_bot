@@ -1,4 +1,5 @@
 import telebot
+from bs4 import BeautifulSoup
 
 TOKEN = "1000799565:AAFBwOxONfgDFTyDBf46_6OTSZVpD8Pfc5M"
 bot = telebot.TeleBot(TOKEN)
