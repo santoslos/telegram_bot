@@ -1,6 +1,6 @@
 import telebot
 from bs4 import BeautifulSoup
-
+from  parser import *
 TOKEN = "1000799565:AAFBwOxONfgDFTyDBf46_6OTSZVpD8Pfc5M"
 bot = telebot.TeleBot(TOKEN)
 
@@ -12,10 +12,9 @@ def start_message(message):
 
 @bot.message_handler(content_types=['text'])
 def send_text(message):
-    if message.text.lower() == 'привет':
-        bot.send_message(message.chat.id, 'Привет, мой создатель Gosha')
-    elif message.text.lower() == 'пока':
-        bot.send_message(message.chat.id, 'Прощай, создатель')
+    a,b = parsers( message.text.lower())
+    bot.send_message(message.chat.id, a)
+
 
 
 bot.polling()
